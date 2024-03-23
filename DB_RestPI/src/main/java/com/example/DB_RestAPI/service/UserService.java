@@ -23,6 +23,33 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public void inserirList(List<UserEntity> users) {
+        for (UserEntity user: users) {
+            userRepository.save(user);
+        }
+    }
+
+    // Métodos utilizando consultas personalizadas
+    public List<UserEntity> buscarPorNome(String nome) {
+        return userRepository.findByNomeIgnoreCase(nome);
+    }
+
+    public List<UserEntity> buscarPorEmail(String email) {
+        return userRepository.findByEmailIgnoreCase(email);
+    }
+
+    public List<UserEntity> buscarPorNomeEEmail(String nome, String email) {
+        return userRepository.findByNomeAndEmailAllIgnoreCase(nome, email);
+    }
+
+    public List<UserEntity> buscarPorNomeQueComecaCom(String prefixo) {
+        return userRepository.findByNomeStartingWithIgnoreCase(prefixo);
+    }
+
+    public List<UserEntity> buscarPorNomeQueContem(String substring) {
+        return userRepository.findByNomeContainingIgnoreCase(substring);
+    }
+
     public UserEntity atualizar(String id, UserEntity newUser) {
         UserEntity existingUser = userRepository.findById(id).orElse(null);
 
