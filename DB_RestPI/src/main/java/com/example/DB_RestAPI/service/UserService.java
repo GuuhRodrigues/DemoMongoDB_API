@@ -19,9 +19,9 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    public UserEntity inserir(UserEntity user) {
-        return userRepository.save(user);
-    }
+//    public UserEntity inserir(UserEntity user) {
+//        return userRepository.save(user);
+//    }
 
     public void inserirList(List<UserEntity> users) {
         for (UserEntity user: users) {
@@ -34,13 +34,13 @@ public class UserService {
         return userRepository.findByNomeIgnoreCase(nome);
     }
 
-    public List<UserEntity> buscarPorEmail(String email) {
-        return userRepository.findByEmailIgnoreCase(email);
-    }
-
-    public List<UserEntity> buscarPorNomeEEmail(String nome, String email) {
-        return userRepository.findByNomeAndEmailAllIgnoreCase(nome, email);
-    }
+//    public List<UserEntity> buscarPorEmail(String email) {
+//        return userRepository.findByEmailIgnoreCase(email);
+//    }
+//
+//    public List<UserEntity> buscarPorNomeEEmail(String nome, String email) {
+//        return userRepository.findByNomeAndEmailAllIgnoreCase(nome, email);
+//    }
 
     public List<UserEntity> buscarPorNomeQueComecaCom(String prefixo) {
         return userRepository.findByNomeStartingWithIgnoreCase(prefixo);
@@ -54,8 +54,10 @@ public class UserService {
         UserEntity existingUser = userRepository.findById(id).orElse(null);
 
         if (existingUser != null) {
+            existingUser.setTipo(newUser.getTipo());
             existingUser.setNome(newUser.getNome());
-            existingUser.setEmail(newUser.getEmail());
+//            existingUser.setEmail(newUser.getEmail());
+            existingUser.setTelefone(newUser.getTelefone());
             return userRepository.save(existingUser);
         } else {
             // Se o usuário não existe:

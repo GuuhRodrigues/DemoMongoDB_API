@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DB_RestPI.iml" filepath="$PROJECT_DIR$/.idea/DB_RestPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DemoMongoDB_API_CRUD.iml" filepath="$PROJECT_DIR$/.idea/DemoMongoDB_API_CRUD.iml" />
     </modules>
   </component>
 </project>

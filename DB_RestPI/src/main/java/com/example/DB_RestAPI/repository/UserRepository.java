@@ -13,10 +13,10 @@ public interface UserRepository extends MongoRepository<UserEntity, String> {
 
     // Utilizando consultas personalizadas
     List<UserEntity> findByNomeIgnoreCase(String nome);
-    List<UserEntity> findByEmailIgnoreCase(String email);
-
-    // Consulta personalizada para encontrar usuários pelo nome e email
-    List<UserEntity> findByNomeAndEmailAllIgnoreCase(String nome, String email);
+//    List<UserEntity> findByEmailIgnoreCase(String email);
+//
+//    // Consulta personalizada para encontrar usuários pelo nome e email
+//    List<UserEntity> findByNomeAndEmailAllIgnoreCase(String nome, String email);
 
     // Consulta personalizada para encontrar usuários pelo nome que começa com um determinado prefixo
     List<UserEntity> findByNomeStartingWithIgnoreCase(String prefix);

@@ -20,7 +20,6 @@ public class UserController {
     public UserEntity obterPorId(@PathVariable String id) {
         return userService.obterPorId(id);
     }
-
 //    @PostMapping
 //    public UserEntity inserir(@RequestBody UserEntity user) { return userService.inserir(user); }
 
@@ -41,16 +40,16 @@ public class UserController {
     public List<UserEntity> buscarUsuariosPorNome(@PathVariable String nome) {
         return userService.buscarPorNome(nome);
     }
-    //http://localhost:8080/users/buscarPorEmail/joao@gmail.com
-    @GetMapping("/buscarPorEmail/{email}")
-    public List<UserEntity> buscarUsuariosPorEmail(@PathVariable String email) {
-        return userService.buscarPorEmail(email);
-    }
-    //http://localhost:8080/users/buscarPorNomeEEmail?nome=joao&email=joao@gmail.com
-    @GetMapping("/buscarPorNomeEEmail")
-    public List<UserEntity> buscarUsuariosPorNomeEEmail(@RequestParam("nome") String nome, @RequestParam("email") String email) {
-        return userService.buscarPorNomeEEmail(nome, email);
-    }
+//    //http://localhost:8080/users/buscarPorEmail/joao@gmail.com
+//    @GetMapping("/buscarPorEmail/{email}")
+//    public List<UserEntity> buscarUsuariosPorEmail(@PathVariable String email) {
+//        return userService.buscarPorEmail(email);
+//    }
+//    //http://localhost:8080/users/buscarPorNomeEEmail?nome=joao&email=joao@gmail.com
+//    @GetMapping("/buscarPorNomeEEmail")
+//    public List<UserEntity> buscarUsuariosPorNomeEEmail(@RequestParam("nome") String nome, @RequestParam("email") String email) {
+//        return userService.buscarPorNomeEEmail(nome, email);
+//    }
     //http://localhost:8080/users/buscarPorNomeQueComecaCom/j
     @GetMapping("/buscarPorNomeQueComecaCom/{prefixo}")
     public List<UserEntity> buscarUsuariosPorNomeQueComecaCom(@PathVariable String prefixo) {
