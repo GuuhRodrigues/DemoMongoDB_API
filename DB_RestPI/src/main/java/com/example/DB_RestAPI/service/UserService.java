@@ -54,10 +54,8 @@ public class UserService {
         UserEntity existingUser = userRepository.findById(id).orElse(null);
 
         if (existingUser != null) {
-            existingUser.setTipo(newUser.getTipo());
+            existingUser.setEmail(newUser.getEmail());
             existingUser.setNome(newUser.getNome());
-//            existingUser.setEmail(newUser.getEmail());
-            existingUser.setTelefone(newUser.getTelefone());
             return userRepository.save(existingUser);
         } else {
             // Se o usuário não existe:

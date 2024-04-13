@@ -9,5 +9,4 @@ class DbRestPiApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
